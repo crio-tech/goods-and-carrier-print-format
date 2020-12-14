@@ -1,0 +1,44 @@
+<table class="table table-borderless table-data">
+    <tbody>
+         <tr>
+             <th>{{_("Booking Details ")}}</th>
+             <th></th>
+         </tr>
+         <tr>
+             <td>{{_("From ")}}</td>
+             <td style="text-align: right;">{{doc.pickup_location}}</td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("To")}}
+              </td>
+             <td style="text-align: right;">
+                 {{doc.drop_location}}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("KM")}}
+              </td>
+             <td style="text-align: right;">
+                 {{doc.ride_km + doc.extra_km}}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("Time")}}
+              </td>
+             <td style="text-align: right;">
+                 {{doc.time + doc.extra_time}}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("Cost")}}
+              </td>
+             <td style="text-align: right;">
+                 Rs. {{doc.total_amount}}
+             </td>
+         </tr>
+     </tbody>
+ </table>
