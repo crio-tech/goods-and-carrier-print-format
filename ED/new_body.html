@@ -14,7 +14,23 @@
                  {{_("GST")}}
               </td>
              <td style="text-align: right;">
-                 18%
+                 {{ doc.gst_percentage }}%
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("CGST -")}} {{doc.gst_percentage|int /2}}%
+              </td>
+             <td style="text-align: right;">
+                 Rs.{{ doc.amount*doc.gst_percentage|int/200 }}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("SGST -")}} {{doc.gst_percentage|int/2}}%
+              </td>
+             <td style="text-align: right;">
+                 Rs.{{ doc.amount*doc.gst_percentage|int/200 }}
              </td>
          </tr>
          <tr>
@@ -46,4 +62,4 @@
          {% endif %}
          
      </tbody>
- </table
+</table>
