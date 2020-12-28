@@ -1,0 +1,49 @@
+<table class="table table-borderless table-data">
+    <tbody>
+         <tr>
+             <td>
+                 {{_("Amount:")}}
+              </td>
+             <td style="text-align: right;">
+                 Rs.{{ doc.amount }}
+             </td>
+         </tr>
+         {% if doc.gst_applicable==1 %}
+         <tr>
+             <td>
+                 {{_("GST")}}
+              </td>
+             <td style="text-align: right;">
+                 18%
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("Total Cost:")}}
+              </td>
+             <td style="text-align: right;">
+                 Rs.{{ doc.grand_total }}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("Amount in words")}}
+              </td>
+             <td style="text-align: right;">
+                 {{ frappe.utils.money_in_words(doc.grand_total) }}
+             </td>
+         </tr>
+         {% else %}
+          <tr>
+             <td>
+                 {{_("Amount in words")}}
+              </td>
+             <td style="text-align: right;">
+                 {{ frappe.utils.money_in_words(doc.amount) }}
+             </td>
+         </tr>
+         
+         {% endif %}
+         
+     </tbody>
+ </table
