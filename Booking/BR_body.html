@@ -21,7 +21,7 @@
                  {{_("KM")}}
               </td>
              <td style="text-align: right;">
-                 {{doc.ride_km + doc.extra_km}}
+                 {{doc.ride_km}}
              </td>
          </tr>
          <tr>
@@ -29,7 +29,7 @@
                  {{_("Time")}}
               </td>
              <td style="text-align: right;">
-                 {{doc.time + doc.extra_time}}
+                 {{doc.time}}
              </td>
          </tr>
          <tr>
@@ -38,6 +38,14 @@
               </td>
              <td style="text-align: right;">
                  Rs. {{doc.total_amount}}
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 {{_("Amount in words")}}
+              </td>
+             <td style="text-align: right;">
+                 {{ frappe.utils.money_in_words(doc.total_amount) }}
              </td>
          </tr>
      </tbody>
