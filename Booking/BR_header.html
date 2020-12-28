@@ -1,36 +1,14 @@
-<div class="row">
-    <div class="col-xs-12 text-center" style="border-bottom:1px solid #666; padding:5px;">
-        <strong style="font-size:2.25em;">Booking Receipt</strong>
-        <span class="pull-right" style="padding:5px;">
-        </span>
-    </div>
-</div>
-<div class="row" style="border-bottom:1px solid #666;">
-    <div class="col-xs-4" style="border-right:1px solid #ddd;">From:
-        <br>
-        <strong>SA Goods and carriers,</strong>
-        <br>Kovai
-    </div>
-
-    <div class="col-xs-4" style="border-left:1px solid #ddd; border-right:1px solid #ddd; padding-right: 1px;">To:
+<div class="col-xs-4" style=" padding-right: 1px;">To:
         <br>
         <strong style="font-size:1.3em;" class="text-capitalize">{{doc.customer}}</strong>
         <br>{{doc.phone_number}}
         <br>
 
-    </div>
-    <div class="col-xs-4" style="border-left:1px solid #ddd;">
-
-        <div class="row" style="border-bottom:1px solid #ddd;">
-            <br>
-            <div  style=" padding-right: 4px; padding-left:0px;">Date:{{doc.creation}}
-            </div>
-            <br>
-            Receipt No:{{doc.name}}
-            <br>
-            Driver:{{doc.driver}}
-            <br>
-            Vehicle Number:{{doc.vehicle_no}}
-        </div>
-    </div>
 </div>
+<div style="position:absolute; right:0;">
+ <div  style=" padding-right: 4px; padding-left:0px;">Date: {{frappe.utils.format_date(doc.creation)}}
+            </div>
+            Driver: {{frappe.db.get_value('Driver',doc.driver,'full_name')}}
+            <br>
+            Vehicle Number: {{doc.vehicle_no}}
+            </div>
